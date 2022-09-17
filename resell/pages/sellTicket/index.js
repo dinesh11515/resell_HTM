@@ -34,7 +34,9 @@ const SellPage = () => {
   };
 
   const priceInputHandler = (event) => {
-    setPrice(event.target.value);
+    if (event.target.value >= 0) {
+      setPrice(event.target.value);
+    } else return alert("Add a valid price");
   };
 
   const tokenTypeInputHandler = (event) => {
@@ -45,18 +47,21 @@ const SellPage = () => {
     <div className={classes.index}>
       <form onSubmit={formSubmitHandler} className={classes.form}>
         <input
+          required
           value={address}
           onChange={addressInputHandler}
           type="text"
           placeholder="Contract Address"
         />
         <input
+          required
           value={tokenId}
           onChange={tokenIdInputHandler}
           type="text"
           placeholder="Token ID"
         />
         <input
+          required
           value={price}
           onChange={priceInputHandler}
           type="number"
