@@ -1,0 +1,17 @@
+.section {
+  background-color: #fff;
+  padding: 5rem 3rem;
+}
+
+.section > h2 {
+  font-family: "Merriweather";
+  text-decoration: underline;
+  margin-top: 5rem;
+}
+
+.tickets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}

@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  background: #150c21;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  position: sticky;
+  z-index: 200;
+  top: 0;
+}
+
+.logo {
+  color: white;
+  font-weight: 600;;
+  font-size: 1.6rem;
+  font-family: "Roboto";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.logo > p {
+  font-size: 12px;
+}

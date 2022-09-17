@@ -1,0 +1,44 @@
+.ticket {
+  width: fit-content;
+  /* border: 1px solid #231a2e; */
+  padding: 20px 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.img {
+  border-radius: 12px;
+}
+
+.info {
+  font-size: 1.2rem;
+  color: black;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.info .price {
+  color: gray;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+.btn > button {
+  cursor: pointer;
+  padding: 0.8rem 4rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: #6f5cf1;
+}
+
+.btn > button:hover {
+  background-color: #3c2ab0;
+}
