@@ -1,6 +1,12 @@
-.header {
+.section {
   height: 80vh;
-  max-width: 50vw;
+  background: url("../../../public/pattern-circles.svg");
+  background-repeat: no-repeat;
+}
+
+.header {
+  max-width: 80vw;
+  height: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -23,12 +29,51 @@
 }
 
 .buttons {
+  gap: 3rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
 .mouse {
   font-size: 2rem;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .section {
+    height: 90vh;
+  }
+
+  .title {
+    margin: 40px 0;
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .mouse {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .section{
+    padding-top: 5rem;
+  }
+  .title {
+    margin: 40px 0;
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 0.7rem;
+  }
+
+  .mouse {
+    font-size: 4rem;
+  }
 }
