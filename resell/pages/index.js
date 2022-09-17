@@ -1,10 +1,13 @@
-import { ConnectWallet } from "@thirdweb-dev/react";
+import TicketSection from "../Components/TicketSection/TicketSection";
+import Header from "../Components/UI/Header/Header";
+import Navbar from "../Components/UI/Navbar/Navbar";
 
 export default function Home() {
   return (
-    <div className="bg-black">
-        <ConnectWallet accentColor="#f213a4" colorMode="light" />
-        
-      </div>
+    <>
+      <Navbar />
+      <Header />
+      <TicketSection />
+    </>
   );
 }
