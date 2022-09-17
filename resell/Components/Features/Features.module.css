@@ -1,0 +1,31 @@
+.features {
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 2rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.top {
+  padding-left: 15px;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.top > h3 {
+  color: #6f5cf1;
+  font-size: 2.4rem;
+  flex: 0.65;
+}
+
+.feature {
+  flex: 0.3;
+}
+
+.bottom {
+  display: flex;
+}

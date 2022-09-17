@@ -1,0 +1,29 @@
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px 15px;
+  flex: 0.4;
+}
+
+.icon {
+  background-color: #6f5cf1;
+  width: fit-content;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 6px;
+  font-family: "Merriweather";
+}
+
+.subtitle {
+  color: lightgray;
+  font-size: 0.9rem;
+}
