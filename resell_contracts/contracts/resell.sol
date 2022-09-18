@@ -14,31 +14,36 @@ contract resell {
         uint token_id;
         uint price;
         string token_type;
-        string metadata;
+        string image;
+        string name;
         address payable owner;
         bool sold;
     }
 
     mapping ( uint => token) tokensByid;
+    mapping (address => mapping(uint => bool)) tokensERC721Listed;
+    mapping (address => mapping(uint => address)) tokensERC1155Listed;
 
-    function resellToken721(address contract_address,uint _id,uint price) public {
+    function resellToken721(address contract_address,uint _id,uint price,string memory image,string memory name) public {
+        require(tokensERC721Listed[contract_address][_id] == false, "Token already listed");
         ERC721 nftContract = ERC721(contract_address);
         require(nftContract.ownerOf(_id)==msg.sender,"You are not the owner of this token");
         id=id+1;
-        string memory metadata = nftContract.tokenURI(_id);
-        tokensByid[id]=token(contract_address,_id,price,"ERC721",metadata,payable(msg.sender),false);
+        tokensByid[id]=token(contract_address,_id,price,"ERC721",image,name,payable(msg.sender),false);
+        tokensERC721Listed[contract_address][_id]=true;
     }
 
-    function resellToken1155(address contract_address,uint _id,uint price) public {
+    function resellToken1155(address contract_address,uint _id,uint price,string memory image,string memory name) public {
+        require(tokensERC1155Listed[contract_address][_id] != msg.sender, "Token already listed");
         ERC1155 nftContract = ERC1155(contract_address);
         require(nftContract.balanceOf(msg.sender,_id)>0,"You don't have any tokens");
         id=id+1;
-        string memory metadata = nftContract.uri(_id);
-        tokensByid[id]=token(contract_address,_id,price,"ERC1155",metadata,payable(msg.sender),false);
+        tokensByid[id]=token(contract_address,_id,price,"ERC1155",image,name,payable(msg.sender),false);
+        tokensERC1155Listed[contract_address][_id]=msg.sender;
     }
 
     function buyToken(uint _id) public payable {
-        require(tokensByid[_id].price==msg.value,"You are not paying the right amount");
+        require(tokensByid[_id].price*(10**18) == msg.value,"You are not paying the right amount");
         require(tokensByid[_id].sold==false,"This token is already sold");
         if(keccak256(abi.encodePacked((tokensByid[_id].token_type))) == keccak256(abi.encodePacked(("ERC721")))) {
             ERC721 nftContract = ERC721(tokensByid[_id].contract_address);
