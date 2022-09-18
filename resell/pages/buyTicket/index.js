@@ -4,6 +4,7 @@ import classes from "./index.module.css";
 import { ThirdwebSDK} from "@thirdweb-dev/sdk";
 import { useSigner,useContract, useAddress,useContractRead,useContractWrite} from "@thirdweb-dev/react";
 import { contract_address} from "../../constants";
+import { ethers } from "ethers";
 
 const BuyPage = () => {
 
@@ -24,11 +25,12 @@ const BuyPage = () => {
       alert( err.message);
     }
   }
+  console.log(data)
   return (
     <div className={classes.index}>
       {
         data != undefined && data.map((item) => {
-        return <Ticket key={item[0]} address={item[0]} id={item[1]} price={ethers.BigNumber.from(item[2]).toNumber()} name={item[5]} image={item[4]} buy={buy}/>
+        return <Ticket key={item[0]} address={item[0]} id={item[8]} price={ethers.BigNumber.from(item[2]).toNumber()} name={item[5]} image={item[4]} buy={buy}/>
       }
       )}
     </div>

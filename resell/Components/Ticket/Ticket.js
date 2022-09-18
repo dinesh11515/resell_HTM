@@ -4,7 +4,6 @@ import Image from "next/image";
 import { MediaRenderer } from "@thirdweb-dev/react";
 import { ethers } from "ethers";
 const Ticket = (props) => {
-  console.log(props.price)
   return (
     <div className={classes.ticket}>
       {/* <Image className={classes.img} src={props.image+""} height={300} width={300} /> */}
