@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Footer.module.css";
-import Link from "next/Link";
+import Link from "next/link";
 import { BsFacebook, BsInstagram, BsYoutube, BsTwitter } from "react-icons/bs";
 
 const Footer = () => {

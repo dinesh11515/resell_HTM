@@ -27,7 +27,6 @@ contract resell {
         id=id+1;
         string memory metadata = nftContract.tokenURI(_id);
         tokensByid[id]=token(contract_address,_id,price,"ERC721",metadata,payable(msg.sender),false);
-        nftContract.approve(address(this),_id);
     }
 
     function resellToken1155(address contract_address,uint _id,uint price) public {
@@ -36,7 +35,6 @@ contract resell {
         id=id+1;
         string memory metadata = nftContract.uri(_id);
         tokensByid[id]=token(contract_address,_id,price,"ERC1155",metadata,payable(msg.sender),false);
-        nftContract.setApprovalForAll(address(this),true);
     }
 
     function buyToken(uint _id) public payable {
@@ -63,7 +61,7 @@ contract resell {
     function fetchTokensListed() public view returns (token[] memory) {
         uint count = id-countSold;
         token[] memory tokensListed = new token[](count);
-        for(uint i=1;i<=id;i++) {
+        for(uint i=1;i<=count;i++) {
             if(tokensByid[i].sold==false) {
                 tokensListed[i-1]=tokensByid[i];
             }
