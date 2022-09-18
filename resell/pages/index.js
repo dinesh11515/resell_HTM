@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <TicketSection />
+//       <TicketSection />
       <Features />
       <Footer />
     </>
