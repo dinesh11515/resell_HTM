@@ -6,7 +6,8 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
   flex-direction: column;
-  height: 275px;
+  height: 50%;
+  width: 70%;
   margin: 30px;
 }
 
