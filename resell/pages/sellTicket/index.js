@@ -21,7 +21,7 @@ const SellPage = () => {
       if(tokenType === "erc721"){
         const erc721contract = sdk.getContractFromAbi(address, erc721_abi);
         await erc721contract.call("approve",contract_address, tokenId);
-        await contract.call("resellToken721", address, price,u0x6F3b4C839e7f1D9d989E8456cE3F52DF22a76b8Bl,name);
+        await contract.call("resellToken721", address,tokenId, price,url,name);
       }
       else if(tokenType === "erc1155"){
         const erc1155contract = sdk.getContractFromAbi(address, erc1155_abi);

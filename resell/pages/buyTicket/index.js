@@ -28,7 +28,7 @@ const BuyPage = () => {
     <div className={classes.index}>
       {
         data != undefined && data.map((item) => {
-        return <Ticket address={item[0]} id={item[1]} price={item[2]} name={item[5]} image={item[4]} buy={buy}/>
+        return <Ticket address={item[0]} id={item[1]} price={ethers.BigNumber.from(item[2]).toNumber()} name={item[5]} image={item[4]} buy={buy}/>
       }
       )}
     </div>

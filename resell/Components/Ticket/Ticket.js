@@ -15,7 +15,7 @@ const Ticket = (props) => {
     />
       <div className={classes.info}>
         <p>{props.name}</p>
-        <p className={classes.price}>{ethers.BigNumber.from(props.price).toNumber()}</p>
+        <p className={classes.price}>{props.price}</p>
       </div>
       <div className={classes.btn}>
         <button onClick={()=>{props.buy(ethers.BigNumber.from(props.id).toNumber(),props.price)}}>Buy</button>
