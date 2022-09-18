@@ -18,7 +18,7 @@ const BuyPage = () => {
 
   const buy = async (id,price) => {
     try {
-      const data = await buyToken([ id ],{value:ethers.utils.parseEther(""+price)});
+      const data = await buyToken([ id ,{value:ethers.utils.parseEther(""+price)}]);
       console.info("contract call successs", data);
     } catch (err) {
       alert( err.message);
