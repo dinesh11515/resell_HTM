@@ -18,6 +18,7 @@ contract resell {
         string name;
         address payable owner;
         bool sold;
+        uint id;
     }
 
     mapping ( uint => token) tokensByid;
@@ -29,7 +30,7 @@ contract resell {
         ERC721 nftContract = ERC721(contract_address);
         require(nftContract.ownerOf(_id)==msg.sender,"You are not the owner of this token");
         id=id+1;
-        tokensByid[id]=token(contract_address,_id,price,"ERC721",image,name,payable(msg.sender),false);
+        tokensByid[id]=token(contract_address,_id,price,"ERC721",image,name,payable(msg.sender),false,id);
         tokensERC721Listed[contract_address][_id]=true;
     }
 
@@ -38,7 +39,7 @@ contract resell {
         ERC1155 nftContract = ERC1155(contract_address);
         require(nftContract.balanceOf(msg.sender,_id)>0,"You don't have any tokens");
         id=id+1;
-        tokensByid[id]=token(contract_address,_id,price,"ERC1155",image,name,payable(msg.sender),false);
+        tokensByid[id]=token(contract_address,_id,price,"ERC1155",image,name,payable(msg.sender),false,id);
         tokensERC1155Listed[contract_address][_id]=msg.sender;
     }
 
