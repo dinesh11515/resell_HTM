@@ -21,3 +21,77 @@
 .logo > p {
   font-size: 12px;
 }
+
+.navmenu {
+  display: flex;
+}
+
+.nav-items {
+  list-style: none;
+  padding: 1rem 2rem;
+}
+
+.nav-items > a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: "Roboto";
+  color: #fff;
+}
+
+.nav-items > a:hover {
+  color: #6f5cf1;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 950px) {
+  .navbar {
+    padding: 2rem;
+    position: relative;
+  }
+  .navmenu {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .ham-menu {
+    text-align: center;
+    width: 80vw;
+    height: 70vh;
+    position: absolute;
+    border-radius: 12px;
+    padding: 2rem;
+    z-index: 2233;
+    background-color: #fff;
+    top: 5rem;
+    right: 0.5rem;
+  }
+
+  .newmenu {
+    height: 60vh;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-ham-items {
+    list-style: none;
+  }
+
+  .nav-ham-items > a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: "Roboto";
+    font-weight: 600;
+  }
+}
